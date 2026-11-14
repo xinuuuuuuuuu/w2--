@@ -1,0 +1,152 @@
+
+body {
+    margin: 0;
+    /* 使用多層漸層疊加，製造出截圖那種深色、帶有藍紫色微光暈染的炫彩效果 */
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(41, 128, 185, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(142, 68, 173, 0.12) 0%, transparent 40%),
+        linear-gradient(135deg, #0f111a 0%, #08090e 100%);
+    background-attachment: fixed; /* 固定背景，捲動頁面時背景不動，更有質感 */
+    color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: left;       
+    width: 750px;           
+    margin: 30px 0 15px 0;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 2px 8px;
+    color: #ffffff;
+    
+    /* 螢光筆特效：下方製造一條半透明的亮藍色螢光筆畫過的背景 */
+    background: linear-gradient(to top, rgba(52, 152, 219, 0.4) 45%, transparent 45%);
+    border-radius: 4px;
+}
+h2, h3 {
+    text-align: left;       
+    width: 700px;           
+    margin: 10px 0;
+}
+
+/* 主容器，設為 relative 讓左側小圖可以對齊這群照片 */
+.image-group {
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* 三張大照片的尺寸 */
+.image-group > img {
+    width: 500px;           
+    height: auto;
+    display: block;
+}
+
+
+.title-pic {
+    position: absolute;     
+    width: 150px;           
+    height: auto;
+    left: -500px;           
+    top: 500px;             
+}
+
+
+.quiz-container {
+    width: 700px;
+    background-color: #222;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.question {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #444;
+}
+
+.question p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.options label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #333;
+    transition: background 0.2s;
+}
+
+.options label:hover {
+    background-color: #444;
+}
+
+.feedback {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* 詳解區塊樣式 */
+.explanation {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border-left: 4px solid #3498db;
+    font-size: 13px;
+    color: #dcdcdc;
+    display: none; /* 預設隱藏，作答後才顯示 */
+    border-radius: 0 5px 5px 0;
+    line-height: 1.5;
+}
+
+/* 答對與答錯的即時樣式 */
+.correct-ans {
+    background-color: #27ae60 !important;
+    color: white;
+}
+
+.wrong-ans {
+    background-color: #c0392b !important;
+    color: white;
+}
+
+#reset-btn {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#reset-btn:hover {
+    background-color: #d35400;
+}
+
+#result-display {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    color: #f1c40f;
+}
